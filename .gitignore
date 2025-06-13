@@ -1,3 +1,9 @@
+# Salt file - keep this secure and don't commit to version control
+salt.txt
+
+# Encrypted backup code - keep this secure and don't commit to version control
+encrypted_backup_code.txt
+
 # Python-generated files
 __pycache__/
 *.py[oc]

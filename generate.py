@@ -2,9 +2,10 @@ import base64
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.fernet import Fernet
+from generate_salt import load_salt
 
-# Fixed salt (can be public). Use a strong, random value in a real setup.
-SALT = b'my_fixed_salt_value'
+# Load salt from file
+SALT = load_salt()
 
 def derive_key(secret_input: str, salt: bytes = SALT) -> bytes:
     """
@@ -39,10 +40,12 @@ if __name__ == "__main__":
     
     # Define your predetermined backup code
     backup_code = "BACKUPCODE-123456"
-    
-    # Encrypt the backup code using the derived key
+      # Encrypt the backup code using the derived key
     encrypted_backup_code = encrypt_backup_code(combined_secret, backup_code)
     
-    # Output the encrypted backup code. Copy this value into your public program.
-    print("Encrypted Backup Code (store this in your public code):")
-    print(encrypted_backup_code)
+    # Save the encrypted backup code to a file
+    with open("encrypted_backup_code.txt", "wb") as f:
+        f.write(encrypted_backup_code)
+    
+    print("Encrypted backup code saved to 'encrypted_backup_code.txt'")
+    print("You can now use retrieve_backup_code.py to decrypt it with your secret inputs.")
