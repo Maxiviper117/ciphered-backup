@@ -1,7 +1,3 @@
-Below is a sample `README.md` that gives a high-level overview of the project without revealing sensitive details:
-
----
-
 # Encrypted Backup Retriever
 
 A secure tool for retrieving your predetermined backup code using secret inputs. The tool leverages standard cryptographic techniques to ensure that only the correct inputs will reveal the backup code.
