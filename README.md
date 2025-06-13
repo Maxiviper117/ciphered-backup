@@ -42,7 +42,3 @@ This repository contains a program that:
 ## Disclaimer
 
 This tool is provided as-is. The author is not responsible for any misuse or unintended consequences of its use. Always follow best practices for securing sensitive information.
-
----
-
-Feel free to adjust the wording or sections as needed for your repository!
